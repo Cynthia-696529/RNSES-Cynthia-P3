@@ -15,7 +15,12 @@ Punto de partida con Python: https://uniwebsidad.com/libros/python
 * Version Python: Python 3.9.12
 * https://docs.python.org/es/3/library/csv.html
 
-## Paquete necesarios
+## Librerias
+![conda install numpy](https://github.com/Cynthia-696529/Imagenes/blob/main/Captura%20de%20pantalla%202022-08-19%20a%20las%2019.18.01.png)
+
+![conda install matplotlib](https://github.com/Cynthia-696529/Imagenes/blob/main/Captura%20de%20pantalla%202022-08-19%20a%20las%2019.19.15.png)
+
+![conda install pyserial](https://github.com/Cynthia-696529/Imagenes/blob/main/Captura%20de%20pantalla%202022-08-19%20a%20las%2019.23.21.png)
 
 ## Tarea 1
 Conectar el Smart IMU y comprobar la recepción de datos en el puerto serie
