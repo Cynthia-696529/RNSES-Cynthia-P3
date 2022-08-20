@@ -24,3 +24,9 @@ Punto de partida con Python: https://uniwebsidad.com/libros/python
 
 ## Tarea 1
 Conectar el Smart IMU y comprobar la recepción de datos en el puerto serie
+## Tarea 2 
+Acceder al puerto serie y mostrar por pantalla los datos en tiempo real.
+## Tarea 3
+Almacenar los datos en un fichero .txt separando cada variable con ";", y con retorno de carro al final de cada muestra.
+## Tarea 4
+Acumular datos durante 5 seg, calcular el promedio y desviación estándar y representarlos gráficamente.
