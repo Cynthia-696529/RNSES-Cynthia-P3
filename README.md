@@ -26,7 +26,7 @@ Punto de partida con Python: https://uniwebsidad.com/libros/python
 Conectar el Smart IMU y comprobar la recepción de datos en el puerto serie
 * Código
 * Video
-[![Alt text](https://img.youtu.be/VO3m8w6JL4U.jpg)](https://youtu.be/VO3m8w6JL4U)
+[![Conec.IMU](https://img.youtu.be/VO3m8w6JL4U.jpg)](https://youtu.be/VO3m8w6JL4U)
 ## Tarea 2 
 Acceder al puerto serie y mostrar por pantalla los datos en tiempo real.
 ## Tarea 3
