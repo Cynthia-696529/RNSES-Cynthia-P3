@@ -25,6 +25,32 @@ Punto de partida con Python: https://uniwebsidad.com/libros/python
 ## Tarea 1
 Conectar el Smart IMU y comprobar la recepción de datos en el puerto serie
 * Código
+ ```
+ #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Tarea 1 Conectar Smart IMU y comprobar la recpeción de datos del puerto serie
+"""
+
+import serial
+import time
+
+port = "/dev/cu.SLAB_USBtoUART"
+baudio = 115200 #baurate
+esp32 = serial.Serial(port,baudio)
+time.sleep(2)                         # espero 2s para que se acople el puerto serie
+
+### VARIABLES ###
+cont = 0
+
+while True:    
+    while cont>10:                      # cuando llega a este valor, la señal recibida por el sensor es estable 
+        salida = esp32.readline()       # devuelve un número binario
+        salida = salida.decode("utf-8") # cast de binario a string
+        print(salida)
+    cont = cont +1;
+ ```
+ 
 * Video
 [![Conec.IMU](https://img.youtu.be/VO3m8w6JL4U.jpg)](https://youtu.be/VO3m8w6JL4U)
 ## Tarea 2 
