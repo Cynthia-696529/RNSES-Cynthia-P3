@@ -210,4 +210,4 @@ csvFile.close()
 
 ```
 * Grafica
-
+![Calculos](https://github.com/Cynthia-696529/Imagenes/blob/d0db84c33e729619e7062e3f84c76fb066d9401c/calculos.png)
