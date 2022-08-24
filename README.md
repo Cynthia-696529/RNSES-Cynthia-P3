@@ -102,3 +102,112 @@ csvFile.close()
 ```
 ## Tarea 4
 Acumular datos durante 5 seg, calcular el promedio y desviación estándar y representarlos gráficamente.
+* Código
+```
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Tarea 5 : Acumular datos durante 5 seg, calcular el promedio y desviación estándar y representarlos gráficamente.
+"""
+import csv
+import serial
+import time
+import matplotlib.pyplot as plot #graficar los datos
+import statistics # calculo promedio y desv, estandar
+
+port = "/dev/cu.SLAB_USBtoUART"
+baudio = 115200 #baurate
+esp32 = serial.Serial(port,baudio)
+time.sleep(2)     
+
+### VARIABLES ###
+cont = 0
+data = []
+name_data ="datos.txt"
+#ejes
+accx=[]   
+accy=[]
+accz=[]
+# promedio
+meanx=[]
+meany=[]
+meanz=[]
+# desv.estandar
+devx=[]
+devy=[]
+devz=[]
+t=[]
+# Plot
+plot.figure()
+plot1 = plot.subplot(2,2,1)
+plot2 = plot.subplot(2,2,2)
+plot3 = plot.subplot(2,2,3)
+
+#------------------------------------------------
+with open(name_data,'w',newline = '') as csvFile:
+
+    writer = csv.writer(csvFile,delimiter=';')
+    while True:   
+
+        in_put = esp32.readline()
+        in_put = in_put.decode("utf-8")  # ser.readline returns a binary, convert to string
+        in_put = in_put.replace(",", ";");
+       
+        data.append(in_put)
+    
+        if(cont>10):
+            a,b,c= data[cont].split(";") 
+            t.append(cont-10)
+            accx.append(float(a))   
+            accy.append(float(b))
+            accz.append(float(c)) 
+            writer.writerow([float(a),float(b),float(c)]) 
+            
+            meanx.append(statistics.mean(accx))
+            meany.append(statistics.mean(accy))
+            meanz.append(statistics.mean(accz))
+            
+            devx.append(statistics.pstdev(accx))
+            devy.append(statistics.pstdev(accy))
+            devz.append(statistics.pstdev(accz))
+            
+        cont = cont+1
+        if(cont > 110):
+            break
+#---Plots  -----------------------------------   
+    
+plot1.plot(t,accx,color='red', label='Eje x')
+plot1.plot(t,accy,color='blue', label='Eje y')
+plot1.plot(t,accz,color='lightseagreen', label='Eje z')
+
+plot2.plot(t,meanx,color='red', label='Eje x')
+plot2.plot(t,meany,color='blue', label='Eje y')
+plot2.plot(t,meanz,color='lightseagreen', label='Eje z')
+
+plot3.plot(t,devx,color='red', label='Eje x')
+plot3.plot(t,devy,color='blue', label='Eje y')
+plot3.plot(t,devz,color='lightseagreen', label='Eje z')
+
+plot1.set_title(" Medidas ")
+plot1.set_ylabel(" a (m/s2)")
+plot1.set_xlabel("sample number")    
+#plot1.legend(bbox_to_anchor=(1.05, 0.5), loc='upper left', borderaxespad=0.)   
+
+plot2.set_title(" Media ")
+plot2.set_ylabel(" a (m/s2)")
+plot2.set_xlabel("sample number")    
+#plot2.legend(bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0.)    
+
+plot3.set_title(" Desv. tipica ")
+plot3.set_ylabel(" a (m/s2)")
+plot3.set_xlabel("sample number")    
+plot3.legend(bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0.)     
+
+print("Fin")
+esp32.close()
+csvFile.close()
+
+
+```
+* Grafica
+
