@@ -22,8 +22,11 @@ Punto de partida con Python: https://uniwebsidad.com/libros/python
 
 ![conda install pyserial](https://github.com/Cynthia-696529/Imagenes/blob/main/Captura%20de%20pantalla%202022-08-19%20a%20las%2019.23.21.png)
 
-## Tarea 1
+## Tareas 1-2
+* Tarea 1
 Conectar el Smart IMU y comprobar la recepción de datos en el puerto serie
+* Tarea 2 
+Acceder al puerto serie y mostrar por pantalla los datos en tiempo real.
 * Código
  ```
  #!/usr/bin/env python3
@@ -53,9 +56,49 @@ while True:
  
 * Video
 [![Conec.IMU](https://img.youtu.be/VO3m8w6JL4U.jpg)](https://youtu.be/VO3m8w6JL4U)
-## Tarea 2 
-Acceder al puerto serie y mostrar por pantalla los datos en tiempo real.
+
 ## Tarea 3
 Almacenar los datos en un fichero .txt separando cada variable con ";", y con retorno de carro al final de cada muestra.
+* Código
+```
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Tarea 3: Almacenar datos en un fichero .txt separando las variable por ';'
+"""
+
+import serial
+import time
+import csv # archivos csv
+port = "/dev/cu.SLAB_USBtoUART"
+baudio = 115200 #baurate
+esp32 = serial.Serial(port,baudio)
+time.sleep(2)                         # espero 2s para que se acople el puerto serie
+
+### VARIABLES ###
+cont = 0
+data=[]
+name_data ="datos.txt"
+
+
+with open(name_data,'w',newline='') as csvFile:
+
+    writer = csv.writer(csvFile,delimiter=';')
+    while True:   
+        salida = esp32.readline()          # devuelve un número binario
+        salida = salida.decode("utf-8")    # cast de binario a string
+        salida = salida.replace(",", ";"); # reemplazar ',' por ';'       
+        data.append(salida)               # añade los elementos salida a la lista datos[]
+    
+        if(cont>10):                       # cuando llega a este valor, la señal recibida por el sensor es estable 
+            a,b,c= data[cont].split(";")  # divide la cadena cada vez aue ve ';'    
+            writer.writerow([float(a),float(b),float(c)])                             
+        cont=cont+1
+        if(cont>110):
+            break     
+ 
+esp32.close()
+csvFile.close()
+```
 ## Tarea 4
 Acumular datos durante 5 seg, calcular el promedio y desviación estándar y representarlos gráficamente.
