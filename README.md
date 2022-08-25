@@ -2,7 +2,7 @@
 
 ## Tabla de contenidos 
 * [Información](#Información)
-* [Tarea 1. Conectar Smart IMU](#Tareas1-2)
+* [Tarea 1. Conectar Smart IMU](##Tareas1-2)
 * [Tarea 2. Mostrar datos en tiempo real ](#Tareas1-2)
 * [Tarea 3. Almacenar datos en fichero .txt](#Tarea3)
 * [Tarea 4. Calculos y manejo de datos](#Tarea4.Calculosymanejodedatos)
