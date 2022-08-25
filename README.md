@@ -102,6 +102,9 @@ csvFile.close()
 ```
 ## Tarea 4
 Acumular datos durante 5 seg, calcular el promedio y desviación estándar y representarlos gráficamente.
+* https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot
+* https://matplotlib.org/stable/plot_types/basic/plot.html#sphx-glr-plot-types-basic-plot-py
+ 
 * Código
 ```
 #!/usr/bin/env python3
