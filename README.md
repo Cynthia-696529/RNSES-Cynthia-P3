@@ -2,10 +2,10 @@
 
 ## Tabla de contenidos 
 * [Información](#Información)
-* [Tarea 1. Conectar Smart IMU](#tarea1)
-* [Tarea 2. Mostrar datos en tiempo real ](#tarea2)
-* [Tarea 3. Almacenar datos en fichero .txt](#tarea3)
-* [Tarea 4. Calculos y manejo de datos](#tarea4)
+* [Tarea 1. Conectar Smart IMU](#Tareas 1-2)
+* [Tarea 2. Mostrar datos en tiempo real ](#Tareas 1-2)
+* [Tarea 3. Almacenar datos en fichero .txt](#Tarea 3)
+* [Tarea 4. Calculos y manejo de datos](#Tarea 4)
 
 ## Información
 Punto de partida con Python: https://uniwebsidad.com/libros/python
