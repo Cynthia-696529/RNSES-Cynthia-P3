@@ -1,7 +1,7 @@
 # RNSES-Cynthia-P3
 
 ## Tabla de contenidos 
-* [Información](#info)
+* [Información](#Información)
 * [Tarea 1. Conectar Smart IMU](#tarea1)
 * [Tarea 2. Mostrar datos en tiempo real ](#tarea2)
 * [Tarea 3. Almacenar datos en fichero .txt](#tarea3)
