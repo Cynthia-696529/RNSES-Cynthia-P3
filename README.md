@@ -5,7 +5,7 @@
 * [Tarea 1. Conectar Smart IMU](#tarea1)
 * [Tarea 2. Mostrar datos en tiempo real ](#tarea2)
 * [Tarea 3. Almacenar datos en fichero .txt](#tarea3)
-* [Tarea 4. Calculos y menejo de datos](#tarea4)
+* [Tarea 4. Calculos y manejo de datos](#tarea4)
 
 ## Información
 Punto de partida con Python: https://uniwebsidad.com/libros/python
