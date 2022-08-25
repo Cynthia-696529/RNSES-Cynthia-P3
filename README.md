@@ -14,6 +14,7 @@ Punto de partida con Python: https://uniwebsidad.com/libros/python
 * Sistema operativo: macOS Catalina versión 10.15.7
 * Version Python: Python 3.9.12 (Entorno Anaconda 3 - Spyder)
 * CSV: https://docs.python.org/es/3/library/csv.html
+* Statistics: https://docs.python.org/3/library/statistics.html
 
 ## Librerias
 ![conda install numpy](https://github.com/Cynthia-696529/Imagenes/blob/main/Captura%20de%20pantalla%202022-08-19%20a%20las%2019.18.01.png)
